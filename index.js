@@ -17,7 +17,10 @@ class Parser {
         'value': $(el.children[26]).text(),
         'score': $(el.children[8]).text()
       }
-    }).filter( ({value} = {}) => value.includes(`1.${group} (о, ГБ);`) );
+    }).filter( ({value} = {}) => value.includes(`1.${group} (о, ГБ);`)).reduce( (accum, {user, score} = {}, index) => {
+      accum += `${index}. ${user} ${score} \n`;
+      return accum;
+    }, '');
   }
 }
 
