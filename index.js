@@ -3,6 +3,33 @@ const cheerio = require('cheerio');
 
 const groups = {
   '09.03.04': 'https://www.sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT09.03.046200OSS',
+  '09.03.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT09.03.016200OSS',
+  '09.03.02': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT09.03.026200OSS',
+  '02.03.03': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT02.03.036200OSS',
+  '10.03.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT10.03.016200OSS',
+  '11.03.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT11.03.016200OSS',
+  '11.03.02': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT11.03.026200OSS',
+  '11.03.03': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP11.03.036200OSS',
+  '11.03.04': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP11.03.046200OSS',
+  '12.03.04': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP12.03.046200OSS',
+  '13.03.02': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT13.03.026200OSS',
+  '15.03.06': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT15.03.066200OSS',
+  '17.03.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT17.03.016200OSS',
+  '20.03.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP20.03.016200OSS',
+  '25.03.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT25.03.016200OSS',
+  '27.03.03': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT27.03.036200OSS',
+  '27.03.04': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT27.03.046200OSS',
+  '28.03.02': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP28.03.026200OSS',
+  '38.03.04': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGUE38.03.046200OSS',
+  '38.03.05': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGUE38.03.056200OSS',
+  '09.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT09.06.017200OSS',
+  '03.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP03.06.017200OSS',
+  '10.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT10.06.017200OSS',
+  '11.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGIT11.06.017200OSS',
+  '12.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGEP12.06.017200OSS',
+  '15.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT15.06.017200OSS',
+  '24.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGRT24.06.017200OSS',
+  '27.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT27.06.017200OSS',
 };
 
 class Parser {
