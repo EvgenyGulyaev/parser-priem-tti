@@ -1,0 +1,27 @@
+{
+  "name": "parser-priem-tti",
+  "version": "0.0.1",
+  "description": "This parser for priem tti ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node test.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Parser"
+  ],
+  "author": "Evgeny Gulyaev",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyGulyaev/parser-priem-tti.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EvgenyGulyaev/parser-priem-tti/issues"
+  },
+  "homepage": "https://github.com/EvgenyGulyaev/parser-priem-tti#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
