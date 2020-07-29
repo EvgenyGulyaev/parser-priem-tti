@@ -17,8 +17,8 @@ class Parser {
         'value': $(el.children[26]).text(),
         'score': $(el.children[8]).text()
       }
-    }).filter( ({value} = {}) => value.includes(`1.${group} (о, ГБ);`)).reduce( (accum, {user, score} = {}, index) => {
-      accum += `${index}. ${user} ${score} \n`;
+    }).filter( ({value} = {}) => value.includes(`1.${group} (о, ГБ);`)).slice(0, 54).reduce( (accum, {user, score} = {}, index) => {
+      accum += `${index + 1}. ${user} ${score} \n`;
       return accum;
     }, '');
   }
