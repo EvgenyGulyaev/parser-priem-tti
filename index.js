@@ -32,19 +32,35 @@ const groups = {
   '27.06.01': 'https://sfedu.ru/php_j/abitur/show.php?finance=b&list=TGKT27.06.017200OSS',
 };
 
+const aspirantura = [
+  '09.06.01',
+  '03.06.01',
+  '10.06.01',
+  '11.06.01',
+  '12.06.01',
+  '15.06.01',
+  '24.06.01',
+  '27.06.01',
+];
+
 class Parser {
   async getStudents(group = '09.03.04') {
     const { data } = await axios.get(groups[group]);
     const $ = cheerio.load(data);
     let tables = $('table');
-    const trs = tables[tables.length-1].children[1].children.slice(13);
-    return  trs.map( el => {
+    const trs = tables[tables.length - 1].children[1].children.slice(13);
+    return trs.map((el) => {
+      const valueIndex = aspirantura.includes(group) ? 28 : 26;
+      const scoreIndex = aspirantura.includes(group) ? 10 : 8;
       return {
         'user': $(el.children[2]).text(),
-        'value': $(el.children[26]).text(),
-        'score': $(el.children[8]).text()
+        'value': $(el.children[valueIndex]).text(), // Для аспирантов это 28
+        'score': $(el.children[scoreIndex]).text()  //  Для аспирантов 10 
       }
-    }).filter( ({value} = {}) => value.includes(`1.${group} (о, ГБ);`)).slice(0, 54).reduce( (accum, {user, score} = {}, index) => {
+    })
+    .filter(({ value } = {}) => value.includes(`1.${group} (о, ГБ);`) || value.includes(`1.${group} (о, ЦП);`))
+    .slice(0, 54)
+    .reduce((accum, { user, score } = {}, index) => {
       accum += `${index + 1}. ${user} ${score} \n`;
       return accum;
     }, '');
