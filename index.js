@@ -97,7 +97,7 @@ class Parser {
         'score': $(el.children[scoreIndex]).text()  //  Для аспирантов 10
       }
     })
-    .filter(({ value } = {}) => value.includes(`1.${group} (о, ГБ);`) || value.includes(`1.${group} (о, ЦП);`))
+    .filter(({ value } = {}) => value.includes(`1.${group} (о, ГБ);`))
     .slice(0, 54)
     .reduce((accum, { user, score } = {}, index) => {
       accum += `${index + 1}. ${user} ${score} \n`;

@@ -1,6 +1,6 @@
 {
   "name": "parser-priem-tti",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "This parser for priem tti ",
   "main": "index.js",
   "scripts": {
